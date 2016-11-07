@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation = "vertical"
+    android:weightSum="2">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:id="@+id/enterScroll"
+        android:layout_weight="0.5"
+        android:background="#696969">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+
+            android:scrollHorizontally="true"
+            android:textSize="50sp"
+            android:gravity="bottom"
+
+            android:textColor="#F5FFFA"
+            android:maxLines="1"
+
+            android:id="@+id/result" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:id="@+id/resultScroll"
+        android:layout_weight="0.5"
+        android:background="#696969">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+
+            android:scrollHorizontally="true"
+            android:textSize="60sp"
+            android:gravity="bottom"
+
+            android:textColor="#F5FFFA"
+            android:maxLines="1"
+
+            android:id="@+id/precalc" />
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="5">
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:weightSum="4">
+            <TableRow
+                android:id="@+id/r1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d7"
+                    android:text="7"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d8"
+                    android:text="8"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d9"
+                    android:text="9"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/OpButtonStyle"
+                    android:id="@+id/div"
+                    android:shadowColor="#D3D3D3"
+                    android:text="/"
+                    android:onClick="onBinaryOperationClick"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/r2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d4"
+                    android:text="4"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d5"
+                    android:text="5"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d6"
+                    android:text="6"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/OpButtonStyle"
+                    android:id="@+id/mul"
+                    android:text="*"
+                    android:onClick="onBinaryOperationClick"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/r3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d1"
+                    android:text="1"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d2"
+                    android:text="2"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d3"
+                    android:text="3"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/OpButtonStyle"
+                    android:id="@+id/sub"
+                    android:text="-"
+                    android:onClick="onBinaryOperationClick"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/r4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d0"
+                    android:text="0"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/d00"
+                    android:text="00"
+                    android:onClick="onNumberClick"/>
+
+                <Button
+                    style="@style/NumButtonStyle"
+                    android:id="@+id/point"
+                    android:text="."
+                    android:onClick="checkPoint"/>
+
+                <Button
+                    style="@style/OpButtonStyle"
+                    android:id="@+id/add"
+                    android:text="+"
+                    android:onClick="onBinaryOperationClick"/>
+            </TableRow>
+
+        </TableLayout>
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="4" >
+            <Button
+                style="@style/OpButtonStyle"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:id="@+id/clear"
+                android:text="C"
+                android:layout_weight="1"
+                android:onClick="onClickClear"/>
+
+            <Button
+                style="@style/OpButtonStyle"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:id="@+id/del"
+                android:text="DEL"
+                android:layout_weight="1"
+                android:onClick="onClickDel"/>
+
+            <Button
+                style="@style/EqvButtonStyle"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:id="@+id/eqv"
+                android:text="="
+                android:layout_weight="2"
+                android:onClick="onClickEquals"/>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>
